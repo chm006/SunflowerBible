@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="AppThemeBase">
+        <item name="colorPrimary">@color/toolbar_primary</item><!-- toolbar（actionbar）颜色 -->
+        <item name="colorPrimaryDark">@color/toolbar_primary_dark</item> <!-- 状态栏颜色 (需要在xml布局文件中顶层布局设置android:fitsSystemWindows="true")-->
+        <item name="colorAccent">@color/font_color</item><!-- 强调色，如FloatingActionButton色，tab滑动条的颜色，Snackbar按钮上的颜色，TextInputLayout 上输入指针的颜色和hint的颜色等等 -->
+        <item name="android:windowBackground">@color/toolbar_bg</item><!-- 所有页面的背景颜色，只要没设置背景色都会统一设置成这个颜色 -->
+        <!-- navigationBarColor（导航栏底色）：仅能在 API v21 也就是 Android 5 以后的版本中使用， 因此要将之设定在 res/values-v21/styles.xml 里面 -->
+        <item name="android:navigationBarColor">@color/navigation_bar_color</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+</resources>

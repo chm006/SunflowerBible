@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Style_Toolbar"
+        app:titleTextAppearance="@style/Toolbar_TextAppearance_White" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:visibility="invisible"
+        style="@style/Style_Toolbar"
+        app:titleTextAppearance="@style/Toolbar_TextAppearance_White" />
+
+    <com.chm006.library.widget.ListenedScrollView
+        android:id="@+id/listenedScrollView"
+        android:layout_below="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/red_iv"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:src="@color/red" />
+
+            <ImageView
+                android:id="@+id/orange_iv"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:src="@color/orange" />
+
+            <ImageView
+                android:id="@+id/yellow_iv"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:src="@color/yellow" />
+
+            <ImageView
+                android:id="@+id/green_iv"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:src="@color/green" />
+
+            <ImageView
+                android:id="@+id/blue_iv"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:src="@color/blue" />
+
+            <ImageView
+                android:id="@+id/indigo_iv"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:src="@color/indigo" />
+
+            <ImageView
+                android:id="@+id/purple_iv"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:src="@color/purple" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:src="@color/white" />
+        </LinearLayout>
+
+    </com.chm006.library.widget.ListenedScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,37 @@
+<resources>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!-- 文字公共样式 -->
+    <style name="TextStyle">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+    <style name="TextStyle.XXL">
+        <item name="android:textColor">@color/font_color_b</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="TextStyle.XL">
+        <item name="android:textColor">@color/font_color_b</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="TextStyle.L">
+        <item name="android:textColor">@color/text_dark_gray</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="TextStyle.M">
+        <item name="android:textColor">@color/text_gray</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+    <style name="TextStyle.S">
+        <item name="android:textColor">@color/text_light_gray</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+</resources>

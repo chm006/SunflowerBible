@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/toolbar_abl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            style="@style/Style_Toolbar"
+            app:titleTextAppearance="@style/Toolbar_TextAppearance_White" />
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayout"
+            style="@style/Style_TabLayout"
+            app:tabTextColor="@color/font_color3"
+            app:tabSelectedTextColor="@color/font_color_w"
+            app:tabIndicatorColor="@color/font_color3"/>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/fragment_test1_vp"
+        android:layout_below="@+id/toolbar_abl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+   <!-- <FrameLayout
+        android:id="@+id/fragment_test1_fl"
+        android:layout_below="@+id/fragment_test1_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />-->
+
+    <!--<RadioGroup
+        android:id="@+id/fragment_radiogroup"
+        style="@style/style_RadioGroup"
+        android:layout_alignParentBottom="true">
+
+        <RadioButton
+            android:id="@+id/fragment_rb_1"
+            style="@style/style_RadioButton"
+            android:checked="true"
+            android:drawableTop="@drawable/selector_radiobutton"
+            android:text="tab1"
+            android:textColor="@color/font_color" />
+
+        <RadioButton
+            android:id="@+id/fragment_rb_2"
+            style="@style/style_RadioButton"
+            android:drawableTop="@drawable/selector_radiobutton"
+            android:text="tab2"
+            android:textColor="@color/font_color" />
+
+        <RadioButton
+            android:id="@+id/fragment_rb_3"
+            style="@style/style_RadioButton"
+            android:drawableTop="@drawable/selector_radiobutton"
+            android:text="tab3"
+            android:textColor="@color/font_color" />
+
+        <RadioButton
+            android:id="@+id/fragment_rb_4"
+            style="@style/style_RadioButton"
+            android:drawableTop="@drawable/selector_radiobutton"
+            android:text="tab4"
+            android:textColor="@color/font_color" />
+    </RadioGroup>-->
+
+</RelativeLayout>

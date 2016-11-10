@@ -1,0 +1,104 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        applicationId "com.chm006.sunflowerbible"
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 5
+        versionName "1.0.4"
+        multiDexEnabled true
+    }
+    signingConfigs {
+        releaseConfig {
+            storeFile file('SunflowerBible.jks')
+            keyAlias 'SunflowerBible'
+            keyPassword 'chm006'
+            storePassword 'chm006'
+        }
+        debug {
+            storeFile file("debug.keystore")
+        }
+    }
+    buildTypes {
+        release {
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+            manifestPlaceholders = [MapKey: "ZYcICrdBp2Db6WuugjncPOo2Pqaij04H"]
+        }
+        debug {
+            applicationIdSuffix '.test'
+            signingConfig signingConfigs.debug
+            manifestPlaceholders = [MapKey: "kz18rYMSNM8CRXWbcXThMr9GKDBLQIFr"]
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+//替换AndroidManifest.xml的字符串
+android.applicationVariants.all { variant ->
+    variant.outputs.each { output ->
+        def buildType = variant.buildType
+        def encoding = 'UTF-8'
+        if (buildType.applicationIdSuffix) {
+            //def defaultPackageId = variant.packageName.replaceAll(buildType.applicationIdSuffix,'')
+            variant.mergeResources.doLast {
+                def f = file("${buildDir}/intermediates/res/merged/${variant.dirName}/values/values.xml")
+                String content = f.getText(encoding)
+                if (content.indexOf('Beta') == -1) {
+                    content = content.replaceAll('SunflowerBible','SunflowerBible Beta')
+                }
+                f.write(content,encoding)
+            }
+        }
+        output.processManifest.doLast {
+            def apk_last = "-v" + android.defaultConfig.versionName + "-" + buildTime() + ".apk"
+            output.outputFile = new File(output.outputFile.parent, output.outputFile.name.replace(".apk", apk_last))
+        }
+    }
+}
+def buildTime() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMdd')
+    return formattedDate
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+apply plugin: 'com.neenbedankt.android-apt'
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile project(':chmlibrary')
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    //三级联动 (省市区)
+    compile 'liji.library.dev:citypickerview:0.2.0'
+    //三级联动（条件 + 时间）
+    compile 'com.bigkoo:pickerview:2.1.1'
+    //compile 'com.bigkoo:pickerview:lunar.1.0'//这个是支持农历的分支
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    //五子棋
+    compile project(':MaterialDesign')
+    compile project(':Salut')
+    apt 'com.bluelinelabs:logansquare-compiler:1.3.4'
+    compile 'com.bluelinelabs:logansquare:1.3.4'
+    compile 'com.squareup:otto:1.3.8'
+    compile 'com.android.support:cardview-v7:24.2.1'
+}

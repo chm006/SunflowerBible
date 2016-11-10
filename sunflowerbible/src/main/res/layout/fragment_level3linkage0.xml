@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/time_tv"
+        android:layout_margin="50dp"
+        android:text="时间"
+        android:textColor="@color/font_color"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:id="@+id/city_tv1"
+        android:layout_margin="50dp"
+        android:text="省市区1"
+        android:textColor="@color/font_color"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:id="@+id/city_tv2"
+        android:layout_margin="50dp"
+        android:text="省市区2"
+        android:textColor="@color/font_color"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+</LinearLayout>

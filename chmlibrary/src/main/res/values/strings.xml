@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Chm Library</string>
+
+    <string name="imageView_null"/>
+    <!--NavigationDrawer侧边栏（抽屉）-->
+    <string name="navigation_drawer_open">打开侧边栏</string>
+    <string name="navigation_drawer_close">关闭侧边栏</string>
+    <!-- NavigationView头部-->
+    <string name="navigation_view_name">Android Studio</string>
+    <string name="navigation_view_email">android.studio@android.com</string>
+    <!--toolbar右上角点击-->
+    <string name="action_share">分享</string>
+    <string name="action_hierarchy">栈视图</string>
+</resources>

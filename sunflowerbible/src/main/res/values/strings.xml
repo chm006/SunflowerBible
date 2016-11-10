@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Sunflower Bible</string>
+
+    <string name="action_settings">设置</string>
+    <string name="action_share">分享</string>
+    <string name="action_edit">编辑</string>
+    <string name="action_hierarchy">栈视图</string>
+
+</resources>

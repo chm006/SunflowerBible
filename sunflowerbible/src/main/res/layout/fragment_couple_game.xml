@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center">
+
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/board_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            card_view:cardElevation="5dp">
+
+            <com.chm006.sunflowerbible.fragment.home.five_in_a_row.widget.GoBangBoard
+                android:id="@+id/go_bang_board"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true" />
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/board_container"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal">
+
+            <com.gc.materialdesign.views.ButtonRectangle
+                android:id="@+id/btn_start_first"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_margin="7dp"
+                android:background="@color/toolbar_primary_dark"
+                android:text="黑子先手" />
+
+            <com.gc.materialdesign.views.ButtonRectangle
+                android:id="@+id/btn_start_game"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_margin="7dp"
+                android:background="@color/toolbar_primary_dark"
+                android:text="开始游戏" />
+
+            <com.gc.materialdesign.views.ButtonRectangle
+                android:id="@+id/btn_exit_game"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_margin="7dp"
+                android:background="@color/toolbar_primary_dark"
+                android:text="退出游戏" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:toDegrees="1080.0">
+
+    <!--ProgressBar 的 android:progressDrawable="@drawable/progress_loading"-->
+
+    <shape
+        android:innerRadiusRatio="6"
+        android:shape="ring"
+        android:thicknessRatio="12"
+        android:useLevel="false">
+        <gradient
+            android:centerColor="@color/gray"
+            android:centerY="0.5"
+            android:endColor="@color/lightgray"
+            android:startColor="@color/dimgrey"
+            android:type="sweep"
+            android:useLevel="false" />
+    </shape>
+
+</rotate>

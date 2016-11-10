@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar" />
+
+    <com.chm006.library.widget.IconCenterEditText
+        style="@style/Style_IconCenterEditText"/>
+
+    <EditText
+        android:id="@+id/edittext_style1"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_margin="36dp"
+        android:background="@drawable/edittext_selector"
+        android:hint="请输入..."
+        android:padding="5dp"
+        android:singleLine="true"
+        android:textColor="@color/font_color_b"
+        android:textColorHint="#AAAAAA"
+        android:textSize="15dp" />
+
+    <!--强大带提示的MD风格的EditText-->
+    <!--
+    counterEnabled：是否启用计数器
+    counterMaxLength：启用计数器时，最大字数限制（仅仅用做显示）
+    counterOverflowTextAppearance：当字数超出计数器的最大限制时的字体格式
+    hintAnimationEnabled：是否启用hint动画效果
+    errorEnabled：是否显示错误信息
+    errorTextAppearance：错误信息的字体格式
+    -->
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textInputLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="11"
+        app:errorEnabled="true"
+        app:hintAnimationEnabled="true">
+
+        <EditText
+            android:id="@+id/textInputLayout_et1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="1234567890qwertyuiopasdfghjklzxcvbnm "
+            android:hint="请输入账号"
+            android:inputType="text"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:saveEnabled="false"
+            android:singleLine="true"
+            android:textColor="@color/font_color" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:counterEnabled="true"
+        app:counterMaxLength="18"
+        app:errorEnabled="true"
+        app:hintAnimationEnabled="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:digits="1234567890"
+            android:hint="请输入密码"
+            android:inputType="numberPassword"
+            android:maxLength="18"
+            android:maxLines="1"
+            android:saveEnabled="false"
+            android:singleLine="true"
+            android:textColor="@color/font_color" />
+    </android.support.design.widget.TextInputLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:color/white"
+            android:visibility="visible">
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_toLeftOf="@+id/sendBtn"
+                android:hint="回复XXXX:"
+                android:maxLines="4"
+                android:textColor="@android:color/black"
+                android:textColorHint="#b2b2b2" />
+
+            <Button
+                android:id="@+id/sendBtn"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="3dp"
+                android:text="发送" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/content_bg_press" />
+
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

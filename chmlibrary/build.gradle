@@ -1,0 +1,54 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.2"
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.squareup.okhttp3:okhttp:3.3.1'
+    compile 'com.google.code.gson:gson:2.6.1'
+    compile 'com.android.support:design:24.2.1'
+    // fragment栈管理（appcompat v7包是必须的）
+    compile 'me.yokeyword:fragmentation:0.7.10'
+    // compile 'me.yokeyword:fragmentation-swipeback:0.7.9'// 如果想使用SwipeBack 滑动边缘退出Fragment/Activity功能，请再添加下面的库
+    // PhotoView图片放大缩小（双击放大缩小）
+    compile 'com.github.chrisbanes.photoview:library:1.2.4'
+    // fresco图片框架
+    compile 'com.facebook.fresco:fresco:0.12.0'
+    compile 'com.facebook.fresco:animated-base-support:0.12.0'
+    // 在 API < 14 上的机器支持 WebP 时，需要添加
+    compile 'com.facebook.fresco:animated-gif:0.12.0'
+    // 支持 GIF 动图，需要添加
+    compile 'com.facebook.fresco:animated-webp:0.12.0'
+    // 支持 WebP （静态图+动图），需要添加
+    compile 'com.facebook.fresco:webpsupport:0.12.0'
+    // glide图片框架
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    //SMS，对mob的短信验证二次封装。更简洁的调用，maven直接仓库依赖。
+    compile 'com.jude:smssdk_mob:1.1.1'
+    //百度地图
+    compile files('libs/baidumapapi_base_v4_0_0.jar')
+    compile files('libs/baidumapapi_cloud_v4_0_0.jar')
+    compile files('libs/baidumapapi_map_v4_0_0.jar')
+    compile files('libs/baidumapapi_radar_v4_0_0.jar')
+    compile files('libs/baidumapapi_search_v4_0_0.jar')
+    compile files('libs/baidumapapi_util_v4_0_0.jar')
+    compile files('libs/locSDK_6.13.jar')
+}

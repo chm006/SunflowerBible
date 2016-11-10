@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--侧边栏menu-->
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@mipmap/menu_drawer_discover_white_24dp"
+            android:title="首页" />
+        <item
+            android:id="@+id/nav_test1"
+            android:icon="@mipmap/menu_drawer_touch_app_white_24dp"
+            android:title="测试1" />
+        <item
+            android:id="@+id/nav_test2"
+            android:icon="@mipmap/menu_drawer_touch_app_white_24dp"
+            android:title="测试2" />
+    </group>
+
+    <item android:title="系统">
+        <menu>
+            <item
+                android:id="@+id/nav_login"
+                android:icon="@mipmap/menu_drawer_account_circle_white_24dp"
+                android:title="登陆" />
+            <item
+                android:id="@+id/nav_myhome"
+                android:icon="@mipmap/menu_drawer_account_circle_white_24dp"
+                android:title="个人中心" />
+
+            <item
+                android:id="@+id/nav_setting"
+                android:icon="@mipmap/menu_drawer_settings_white_24dp"
+                android:title="设置" />
+        </menu>
+    </item>
+
+    <item android:title="推送">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@mipmap/menu_drawer_share"
+                android:title="分享" />
+
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@mipmap/menu_drawer_edit"
+                android:title="关于" />
+        </menu>
+    </item>
+</menu>

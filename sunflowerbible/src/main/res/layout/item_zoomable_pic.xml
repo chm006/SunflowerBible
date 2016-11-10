@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.chm006.library.widget.ZoomableDraweeView
+        android:id="@+id/draweeView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        fresco:fadeDuration="300"
+        fresco:actualImageScaleType="fitCenter"
+
+        fresco:placeholderImage="@color/gray"
+        fresco:placeholderImageScaleType="fitCenter"
+        fresco:backgroundImage="@color/black"
+        fresco:failureImage="@mipmap/ic_error"
+        fresco:failureImageScaleType="centerInside"
+        fresco:retryImage="@mipmap/ic_retry"
+        fresco:retryImageScaleType="centerInside"
+        fresco:progressBarImage="@mipmap/progress_loading"
+        fresco:progressBarImageScaleType="centerInside"
+        fresco:progressBarAutoRotateInterval="1000"
+        />
+
+<!--
+    图片没有加载出来之前显示（展位图）
+    fresco:placeholderImage="@color/gray"
+    fresco:placeholderImageScaleType="fitCenter"
+    图片加载失败时显示的图片
+    fresco:failureImage="@mipmap/ic_error"
+    fresco:failureImageScaleType="centerInside"
+    图片加载失败时显示，提示用户点击重新加载，重复加载4次还是没有加载出来的时候才会显示failureImage的图片
+    fresco:retryImage="@mipmap/ic_retry"
+    fresco:retryImageScaleType="centerCrop"
+    背景图片，这里的背景图片首先被绘制
+    fresco:backgroundImage="@color/gray"
+    设置叠加图，在xml中只能设置一张叠加图片，如果需要多张图片的话，需要在java代码中设置
+    fresco:overlayImage="@mipmap/default_bg"
+    设置点击状态下的叠加图，此叠加图不能缩放
+    fresco:pressedStateOverlayImage="@mipmap/default_bg"
+    进度条图片
+    fresco:progressBarImage="@drawable/progress_loading"
+    fresco:progressBarImageScaleType="centerInside"
+    fresco:progressBarAutoRotateInterval="1000"
+    这个就是各种各样的图片缩放样式了，center，centerCrop，focusCrop，centerInside，fitCenter，fitStart，fitEnd，fitXY
+    ImageScaleType
+    剩下的就是对圆角的处理了…
+    fresco:roundAsCircle="false"
+    fresco:roundedCornerRadius="1dp"
+    fresco:roundTopLeft="true"
+    fresco:roundTopRight="false"
+    fresco:roundBottomLeft="false"
+    fresco:roundBottomRight="true"
+    fresco:roundWithOverlayColor="@color/yellow"
+    fresco:roundingBorderWidth="2dp"
+    fresco:roundingBorderColor="@color/lightcoral"
+-->
+
+</RelativeLayout>

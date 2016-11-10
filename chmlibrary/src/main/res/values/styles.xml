@@ -1,0 +1,96 @@
+<resources>
+    <!--TooBar风格样式-->
+    <style name="AppThemeBase" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- 使用 API Level 22 编译的话，要拿掉前缀字 -->
+        <item name="windowNoTitle">true</item>
+        <!-- android:windowSoftInputMode="state???" 软键盘显示状态   "adjust???" 软键盘和View之间的状态 -->
+        <item name="android:windowSoftInputMode">stateAlwaysHidden|adjustPan</item>
+        <!-- 旋转屏幕不重新创建Activity，注：必须在AndroidManifest.xml的Activity中设置才能生效 -->
+        <item name="android:configChanges">keyboardHidden|orientation|screenSize</item>
+    </style>
+
+    <style name="AppTheme" parent="AppThemeBase">
+        <item name="colorPrimary">@color/toolbar_primary</item><!-- toolbar（actionbar）颜色 -->
+        <item name="colorPrimaryDark">@color/toolbar_primary_dark</item> <!-- 状态栏颜色 (需要在xml布局文件中顶层布局设置android:fitsSystemWindows="true")-->
+        <item name="colorAccent">@color/font_color</item><!-- 强调色，如FloatingActionButton色，tab滑动条的颜色，Snackbar按钮上的颜色，TextInputLayout 上输入指针的颜色和hint的颜色等等 -->
+        <item name="android:windowBackground">@color/toolbar_bg</item><!-- 所有页面的背景颜色，只要没设置背景色都会统一设置成这个颜色 -->
+    </style>
+
+    <style name="AppTheme2" parent="AppThemeBase">
+        <item name="colorPrimary">@color/colorPrimary</item><!-- toolbar（actionbar）颜色 -->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item> <!-- 状态栏颜色 (需要在xml布局文件中顶层布局设置android:fitsSystemWindows="true")-->
+        <item name="colorAccent">@color/colorAccent</item><!-- 强调色，如FloatingActionButton色，tab滑动条的颜色，Snackbar按钮上的颜色，TextInputLayout 上输入指针的颜色和hint的颜色等等 -->
+        <item name="android:windowBackground">@color/white</item><!-- 所有页面的背景颜色，只要没设置背景色都会统一设置成这个颜色 -->
+    </style>
+
+    <style name="Style_Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Toolbar_TextAppearance_White">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/font_color_w</item>
+    </style>
+
+    <!--侧边栏NavigationView样式-->
+    <style name="Style_NavigationView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:fitsSystemWindows">true</item>
+        <item name="android:background">@color/navigation_bg</item>
+        <!-- 在NavigationView中加入属性：
+        app:headerLayout="@layout/nav_header_main"
+        app:menu="@menu/activity_main_drawer_menu" -->
+    </style>
+
+    <!--页签TabLayout样式-->
+    <style name="Style_TabLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+
+    </style>
+
+    <!--首页RadioGroup样式-->
+    <style name="Style_RadioGroup">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!--首页RadioButton样式-->
+    <style name="Style_RadioButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingTop">5dp</item>
+    </style>
+
+    <style name="Style_IconCenterEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">44dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:background">@drawable/shape_white_bg_search_toolbar_edit</item>
+        <item name="android:drawableLeft">@mipmap/ic_search_gray</item>
+        <item name="android:drawableRight">@mipmap/icon_transfer_delete</item>
+        <item name="android:hint">搜索</item>
+        <item name="android:imeOptions">actionSearch</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">#999999</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+    </style>
+
+</resources>

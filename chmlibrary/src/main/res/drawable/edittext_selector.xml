@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_enabled="false">
+        <shape android:shape="rectangle" >
+            <solid android:color="@color/white" />
+            <stroke android:width="1px" android:color="@color/white"/>
+        </shape>
+    </item>
+    <!--获得焦点-->
+    <item android:state_focused="true">
+        <shape android:shape="rectangle" >
+            <solid android:color="@color/white" />
+            <stroke android:width="1dp" android:color="@color/toolbar_primary"/>
+            <corners android:radius="5dip" />
+            <padding android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp" />
+        </shape>
+    </item>
+    <!--没获得焦点（默认）-->
+    <item>
+        <shape android:shape="rectangle" >
+            <solid android:color="@color/white" />
+            <stroke android:width="1px" android:color="@color/lightslategrey"/>
+            <corners android:radius="5dip" />
+            <padding android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp" />
+        </shape>
+    </item>
+</selector>

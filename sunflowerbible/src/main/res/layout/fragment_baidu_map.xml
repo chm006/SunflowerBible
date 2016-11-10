@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/relativeLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.baidu.mapapi.map.MapView
+        android:id="@+id/bmapView"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/Style_Toolbar"
+        android:background="#66116e11"
+        app:titleTextAppearance="@style/Toolbar_TextAppearance_White" />
+
+    <com.chm006.library.widget.IconCenterEditText
+        android:id="@+id/iconCenterEditText"
+        android:layout_below="@+id/toolbar"
+        style="@style/Style_IconCenterEditText" />
+
+    <RelativeLayout
+        android:background="@drawable/shape_white_bg_search_toolbar_edit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:padding="3dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <CheckBox
+            android:id="@+id/btn_checkbox"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/gps_checkbox_selector"
+            android:button="@null"
+            android:checked="true"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false" />
+    </RelativeLayout>
+</RelativeLayout>
