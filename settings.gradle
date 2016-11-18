@@ -1,1 +1,1 @@
-include ':chmlibrary', ':sunflowerbible', ':MaterialDesign', ':Salut', ':junittest'
+include ':chmlibrary', ':sunflowerbible', ':MaterialDesign', ':Salut'

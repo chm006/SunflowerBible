@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.baidu.mobads.AppActivity;
 import com.chm006.library.base.activity.BaseDrawerActivity;
 import com.chm006.library.utils.SPUtil;
 import com.chm006.library.utils.ToastUtil;

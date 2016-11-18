@@ -13,8 +13,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
+import android.widget.GridView;
+import android.widget.RelativeLayout;
 
+import com.baidu.mobads.AdSettings;
+import com.baidu.mobads.AdView;
+import com.baidu.mobads.AdViewListener;
+import com.baidu.mobads.AppActivity;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -24,6 +32,8 @@ import com.chm006.library.widget.SwipeRefreshLayout;
 import com.chm006.sunflowerbible.R;
 import com.chm006.sunflowerbible.fragment.test1.main.bean.GirlsBean;
 import com.chm006.sunflowerbible.http.RemoteHelper;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,6 +53,7 @@ public class GirlsFragment extends BaseBackFragment implements SwipeRefreshLayou
     private int size = 10;
     private GirlsFragment.MyRVAdapter adapter;
     private SwipeRefreshLayout swipeRefreshLayout;
+    private AdView adView;
 
     public static GirlsFragment newInstance(String title) {
         Bundle args = new Bundle();
@@ -70,6 +81,57 @@ public class GirlsFragment extends BaseBackFragment implements SwipeRefreshLayou
     public void init() {
         initToolbar();
         initRecyclerView3SwipeRefreshLayout();
+        initBaiduBanner();
+    }
+
+    //百度广告
+    private void initBaiduBanner() {
+        // 代码设置AppSid，此函数必须在AdView实例化前调用
+        // AdView.setAppSid("debug");
+        // 设置'广告着陆页'动作栏的颜色主题
+        AppActivity.setActionBarColorTheme(AppActivity.ActionBarColorTheme.ACTION_BAR_GREEN_THEME);
+        // 默认请求 http 广告，若需要请求 https 广告，请设置 AdSettings.setSupportHttps 为 true
+        // AdSettings.setSupportHttps(true);
+        //人群属性
+        //AdSettings.setKey(new String[]{"baidu","中国"});
+        //创建广告view
+        String adPlaceID = "3069703";// 重要：请填上你的 代码位ID, 否则 无法请求到广告
+        adView = new AdView(getActivity(), adPlaceID);
+        //设置监听器
+        adView.setListener(new AdViewListener() {
+            @Override
+            public void onAdReady(AdView adView) {
+
+            }
+
+            @Override
+            public void onAdShow(JSONObject jsonObject) {
+
+            }
+
+            @Override
+            public void onAdClick(JSONObject jsonObject) {
+
+            }
+
+            @Override
+            public void onAdFailed(String s) {
+
+            }
+
+            @Override
+            public void onAdSwitch() {
+
+            }
+
+            @Override
+            public void onAdClose(JSONObject jsonObject) {
+
+            }
+        });
+        //将adView添加到父控件中（注：该父控件不一定为您的根控件，只要该控件能通过addView添加广告视图即可）
+        FrameLayout baidu_banner = (FrameLayout) rootView.findViewById(R.id.baidu_banner);
+        baidu_banner.addView(adView);
     }
 
     private void initRecyclerView3SwipeRefreshLayout() {
@@ -100,6 +162,12 @@ public class GirlsFragment extends BaseBackFragment implements SwipeRefreshLayou
     public void onResume() {
         super.onResume();
         refresh();
+    }
+
+    @Override
+    public void onDestroy() {
+        adView.destroy();
+        super.onDestroy();
     }
 
     @Override
