@@ -11,3 +11,5 @@ android:
 
 script:
   - "./gradlew assembleRelease"
+
+  gem install travis

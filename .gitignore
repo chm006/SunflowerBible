@@ -8,3 +8,5 @@
 *.iml
 **/*.iml
 apps
+*.jks
+**/*.jks

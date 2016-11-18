@@ -63,7 +63,7 @@ android.applicationVariants.all { variant ->
             def apk_last = "-v" + android.defaultConfig.versionName + "-" + buildTime() + ".apk"
             output.outputFile = new File(output.outputFile.parent, output.outputFile.name.replace(".apk", apk_last))
         }*/
-        project.ext.set('archivesBaseName', 'appname-' + versionName + '-' + versionCode);
+        project.ext.set('archivesBaseName', 'Sunflower Bible-' + versionName + '-' + versionCode);
     }
 }
 def buildTime() {
