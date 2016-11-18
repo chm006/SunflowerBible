@@ -15,9 +15,9 @@ android {
     signingConfigs {
         releaseConfig {
             storeFile file('SunflowerBible.jks')
-            keyAlias 'SunflowerBible'
-            keyPassword 'chm006'
-            storePassword 'chm006'
+            storePassword project.hasProperty("KEYSTORE_PASS") ? KEYSTORE_PASS : System.getenv("KEYSTORE_PASS")
+            keyAlias project.hasProperty("ALIAS_NAME") ? ALIAS_NAME : System.getenv("ALIAS_NAME")
+            keyPassword project.hasProperty("ALIAS_PASS") ? ALIAS_PASS : System.getenv("ALIAS_PASS")
         }
         debug {
             storeFile file("debug.keystore")
@@ -25,6 +25,7 @@ android {
     }
     buildTypes {
         release {
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.releaseConfig
             manifestPlaceholders = [MapKey: "ZYcICrdBp2Db6WuugjncPOo2Pqaij04H"]
@@ -45,7 +46,7 @@ android {
 //替换AndroidManifest.xml的字符串
 android.applicationVariants.all { variant ->
     variant.outputs.each { output ->
-        def buildType = variant.buildType
+        /*def buildType = variant.buildType
         def encoding = 'UTF-8'
         if (buildType.applicationIdSuffix) {
             //def defaultPackageId = variant.packageName.replaceAll(buildType.applicationIdSuffix,'')
@@ -61,7 +62,8 @@ android.applicationVariants.all { variant ->
         output.processManifest.doLast {
             def apk_last = "-v" + android.defaultConfig.versionName + "-" + buildTime() + ".apk"
             output.outputFile = new File(output.outputFile.parent, output.outputFile.name.replace(".apk", apk_last))
-        }
+        }*/
+        project.ext.set('archivesBaseName', 'appname-' + versionName + '-' + versionCode);
     }
 }
 def buildTime() {
