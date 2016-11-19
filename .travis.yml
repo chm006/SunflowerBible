@@ -17,7 +17,7 @@ before_install:
 - chmod +x gradlew
 
 script:
-- "./gradlew assembleDebug"
+- ./gradlew assembleRelease
 
 before_deploy:
 - mv app/build/outputs/apk/app-debug.apk app/build/outputs/apk/UVCCameraZxing.apk
