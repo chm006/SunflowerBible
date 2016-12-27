@@ -4,10 +4,9 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.support.multidex.MultiDexApplication;
 
-import com.baidu.mapapi.BMapManager;
-import com.baidu.mapapi.SDKInitializer;
 import com.chm006.library.base.exception.LocalFileHandler;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.util.concurrent.TimeUnit;
 
@@ -33,12 +32,6 @@ public class BaseApplication extends MultiDexApplication {
     public void onCreate() {
         super.onCreate();
         mApplication = this;
-
-        //初始化百度地图
-        SDKInitializer.initialize(this);
-
-        //初始化Fresco类（图片加载）
-        Fresco.initialize(this);
 
         //配置程序异常退出处理
         Thread.setDefaultUncaughtExceptionHandler(new LocalFileHandler(this));

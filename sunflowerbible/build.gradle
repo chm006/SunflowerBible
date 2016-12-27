@@ -35,10 +35,10 @@ android {
             signingConfig signingConfigs.debug
             manifestPlaceholders = [MapKey: "kz18rYMSNM8CRXWbcXThMr9GKDBLQIFr"]
         }
-    }
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
+        sourceSets {
+            main {
+                jniLibs.srcDirs = ['libs']
+            }
         }
     }
 }

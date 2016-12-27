@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.baidu.mapapi.SDKInitializer;
 import com.baidu.mobads.AppActivity;
 import com.chm006.library.base.activity.BaseDrawerActivity;
 import com.chm006.library.utils.SPUtil;
@@ -27,6 +28,8 @@ import com.chm006.sunflowerbible.fragment.HomeFragment;
 import com.chm006.sunflowerbible.fragment.LoginFragment;
 import com.chm006.sunflowerbible.fragment.Test1Fragment;
 import com.chm006.sunflowerbible.fragment.Test2Fragment;
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.squareup.leakcanary.LeakCanary;
 
 import java.util.Map;
 
@@ -68,6 +71,19 @@ public class MainDrawerActivity extends BaseDrawerActivity {
 
     @Override
     protected void init(Bundle savedInstanceState) {
+        //初始化百度地图
+        SDKInitializer.initialize(getApplication());
+
+        //内存泄露
+        if (LeakCanary.isInAnalyzerProcess(this)) {
+            // This process is dedicated to LeakCanary for heap analysis.
+            // You should not init your app in this process.
+            return;
+        }
+        LeakCanary.install(getApplication());
+
+        //初始化Fresco类（图片加载）
+        Fresco.initialize(this);
         context = this;
         setFragmentClickable();
         DisplayMetrics dm = getResources().getDisplayMetrics();

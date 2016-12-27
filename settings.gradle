@@ -1,1 +1,1 @@
-include ':chmlibrary', ':sunflowerbible', ':MaterialDesign', ':Salut'
+include ':chmlibrary', ':sunflowerbible', ':MaterialDesign', ':Salut', ':leakcanary-android', ':leakcanary-analyzer', ':leakcanary-watcher', ':leakcanary-android-no-op'
