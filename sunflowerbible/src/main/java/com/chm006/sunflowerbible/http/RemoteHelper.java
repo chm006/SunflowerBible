@@ -19,6 +19,10 @@ public class RemoteHelper {
         return getRetrofit(Consts.ServersUrl.GANK_IO).create(RemoteService.class);
     }
 
+    public static RemoteService create(String serversUrl) {
+        return getRetrofit(serversUrl).create(RemoteService.class);
+    }
+
     private static Retrofit getRetrofit(String serverUrl) {
         if (retrofit == null) {
             synchronized (RemoteHelper.class) {

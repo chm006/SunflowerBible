@@ -41,6 +41,11 @@ public abstract class InfoBaseAdapter extends BaseAdapter {
         return 0;
     }
 
+    public void notifyDataSetChanged(List<Object> data) {
+        this.data = data;
+        super.notifyDataSetChanged();
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         if (convertView == null) {
